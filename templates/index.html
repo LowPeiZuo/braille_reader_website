@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braille</title>
+    <link rel="stylesheet" href="../static/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <!-- <header>
+        <h1>This is the header</h1>
+    </header> -->
+
+    <div class="w3-panel w3-center">
+        <canvas class="w3-card-4" id="result_image"></canvas>
+        <br><br>
+        <label class="w3-button" for="upload_image">Upload Braille Image</label>
+        <input type="file" id="upload_image" name="upload_image" accept="image/*" onchange="replaceImage()">
+        <button type="submit" class="w3-button w3-green" onclick="postImage()">Upload</button>
+    </div>
+    
+    <div class="w3-panel w3-center">
+        <textarea style="padding:9px; min-width: 50svw;" rows="8" id="detected_text"></textarea>
+    </div>
+
+    <div class="w3-panel w3-center">
+        <button class="w3-button w3-purple" type="button" onclick="textToSpeech()">Voice</button>
+    </div>
+
+    <script src="../static/javascript.js"></script>
+    <script>
+        const data_string = '{{ data }}'
+        let data = JSON.parse(data_string.replaceAll("&#39;", "\""))
+    </script>
+</body>
+
+</html>
