@@ -15,10 +15,7 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt')  # local 
 
 @app.route('/')
 def home():
-    data = {
-        "name": 'Zuo'
-    }
-    return render_template('index.html', data=data)
+    return render_template('index.html')
 
 @app.post('/detect')
 def detect():
